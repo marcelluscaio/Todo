@@ -1,1 +1,6 @@
-- [ ] Form para cadastrar
+- [x] Create form
+- [x] Form adds task
+- [ ] Create task list component
+- [ ] Edit task
+- [ ] Delete task
+- [ ] Mark task as complete
