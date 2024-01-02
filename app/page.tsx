@@ -35,6 +35,10 @@ export default function Home() {
 		);
 	}
 
+	function deleteInput(id: string) {
+		setToDo((previous) => previous.filter((task) => task.id !== id));
+	}
+
 	return (
 		<>
 			<header>To do App</header>
@@ -49,6 +53,7 @@ export default function Home() {
 							value={task.name}
 							onChange={(e) => handleInput(e, task.id)}
 						/>
+						<button onClick={() => deleteInput(task.id)}>Delete</button>
 					</li>
 				))}
 			</ul>
