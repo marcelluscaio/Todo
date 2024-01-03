@@ -3,8 +3,7 @@
 - [x] Edit task
 - [x] Delete task
 - [x] Mark task as complete
-- [ ] Use context api to provide state
-  - parei em passar to doe set todo para baixo
+- [x] Use context api to provide state
 - [ ] Style form
 - [ ] Style tasks
 - [ ] Login
