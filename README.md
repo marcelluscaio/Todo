@@ -4,8 +4,8 @@
 - [x] Delete task
 - [x] Mark task as complete
 - [x] Use context api to provide state
-- [ ] Style form
-- [ ] Style tasks
 - [ ] Login
 - [ ] database
 - [ ] Readme
+- [ ] Style form
+- [ ] Style tasks
