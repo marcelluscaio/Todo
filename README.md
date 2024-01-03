@@ -1,6 +1,12 @@
 - [x] Create form
 - [x] Form adds task
-- [ ] Create task list component
-- [ ] Edit task
-- [ ] Delete task
-- [ ] Mark task as complete
+- [x] Edit task
+- [x] Delete task
+- [x] Mark task as complete
+- [ ] Use context api to provide state
+  - parei em passar to doe set todo para baixo
+- [ ] Style form
+- [ ] Style tasks
+- [ ] Login
+- [ ] database
+- [ ] Readme
