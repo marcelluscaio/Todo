@@ -8,8 +8,8 @@ import TodoList from "./TodoList";
 
 export const Context = createContext<ContextType | null>(null);
 
-export default function ContextProvider() {
-	const [toDo, setToDo] = useState<ToDoItem[]>([]);
+export default function ContextProvider({ tasks }: { tasks: ToDoItem[] }) {
+	const [toDo, setToDo] = useState<ToDoItem[]>(tasks);
 
 	return (
 		<Context.Provider value={{ toDo, setToDo }}>

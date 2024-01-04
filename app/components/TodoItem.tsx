@@ -14,7 +14,12 @@ export default function TodoItem({ task }: Props) {
 		setToDo((previous) =>
 			previous.map((task) =>
 				task.id === id
-					? { id: task.id, name: task.name, complete: !task.complete }
+					? {
+							id: task.id,
+							name: task.name,
+							userId: task.userId,
+							completed: !task.completed,
+					  }
 					: task
 			)
 		);
@@ -26,7 +31,14 @@ export default function TodoItem({ task }: Props) {
 
 		setToDo((previous) =>
 			previous.map((task) =>
-				task.id === id ? { id: task.id, name: value, complete: task.complete } : task
+				task.id === id
+					? {
+							id: task.id,
+							name: value,
+							userId: task.userId,
+							completed: task.completed,
+					  }
+					: task
 			)
 		);
 	}
@@ -39,7 +51,7 @@ export default function TodoItem({ task }: Props) {
 		<li key={task.id}>
 			<input
 				type="checkbox"
-				checked={task.complete}
+				checked={task.completed}
 				onChange={() => {
 					toggleTaskStatus(task.id);
 				}}

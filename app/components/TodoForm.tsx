@@ -29,7 +29,10 @@ export default function TodoForm() {
 	function createToDo(input: HTMLInputElement) {
 		const value = input.value;
 		const id = crypto.randomUUID();
-		setToDo((previous) => [...previous, { id: id, name: value, complete: false }]);
+		setToDo((previous) => [
+			...previous,
+			{ id: id, name: value, completed: false, userId: "Random ID" },
+		]);
 	}
 
 	function resetInput(input: HTMLInputElement) {
