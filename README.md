@@ -4,7 +4,6 @@
 - [x] Delete task
 - [x] Mark task as complete
 - [x] Use context api to provide state
-- Tasks come from the db
 - add tasks to the db
 - edit tasks in the db
 - delete tasks from the database
