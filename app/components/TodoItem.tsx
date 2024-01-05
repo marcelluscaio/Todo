@@ -1,13 +1,22 @@
-import { useContext } from "react";
+import { SetStateAction, useContext, useRef, Dispatch } from "react";
 import { extractValidContext } from "../utils/extractValidContext";
 import { Context } from "./ContextProvider";
 import type { ToDoItem } from "../types/ToDoItem";
 
+type IsEditingItemId = string | null;
+
 type Props = {
 	task: ToDoItem;
+	isEditingItemId: IsEditingItemId;
+	setIsEditingItemId: Dispatch<SetStateAction<IsEditingItemId>>;
 };
 
-export default function TodoItem({ task }: Props) {
+export default function TodoItem({
+	task,
+	isEditingItemId,
+	setIsEditingItemId,
+}: Props) {
+	const ref = useRef<HTMLInputElement>(null);
 	const { setToDo } = extractValidContext(useContext(Context));
 
 	function toggleTaskStatus(id: string) {
@@ -25,13 +34,19 @@ export default function TodoItem({ task }: Props) {
 		);
 	}
 
-	function editTask(e: React.ChangeEvent, id: string) {
-		const target = e.target as HTMLInputElement;
-		const value = target.value;
+	function startEditingTask(id: string) {
+		setIsEditingItemId(id);
+	}
+
+	function editTask(input: HTMLInputElement, id: string) {
+		setIsEditingItemId(null);
+
+		const value = input.value;
 		const response = fetch(`/api/editTask/${id}`, {
 			method: "PUT",
 			body: JSON.stringify({ name: value }),
-		}).then((response) => response.json());
+		});
+
 		setToDo((previous) =>
 			previous.map((task) =>
 				task.id === id
@@ -65,9 +80,47 @@ export default function TodoItem({ task }: Props) {
 			/>
 			<input
 				value={task.name}
-				onChange={(e) => editTask(e, task.id)}
+				ref={ref}
+				className={`task-input ${isEditingItemId === task.id ? "editing" : ""}`}
+				tabIndex={isEditingItemId === task.id ? 0 : -1}
+				readOnly={isEditingItemId === task.id ? false : true}
+				onChange={(e) =>
+					setToDo((previous) =>
+						previous.map((tasksItem) =>
+							tasksItem.id === task.id
+								? {
+										id: tasksItem.id,
+										name: e.target.value,
+										userId: tasksItem.userId,
+										completed: tasksItem.completed,
+								  }
+								: tasksItem
+						)
+					)
+				}
 			/>
-			<button onClick={() => deleteTask(task.id)}>Delete</button>
+			<button
+				disabled={
+					isEditingItemId === task.id || isEditingItemId === null ? false : true
+				}
+				onClick={() => {
+					isEditingItemId !== task.id || isEditingItemId === null
+						? startEditingTask(task.id)
+						: editTask(ref.current!, task.id);
+				}}
+			>
+				{isEditingItemId !== task.id || isEditingItemId === null
+					? "Edit"
+					: "Confirm"}
+			</button>
+			<button
+				disabled={
+					isEditingItemId === task.id || isEditingItemId === null ? false : true
+				}
+				onClick={() => deleteTask(task.id)}
+			>
+				Delete
+			</button>
 		</li>
 	);
 }
