@@ -4,9 +4,10 @@
 - [x] Delete task
 - [x] Mark task as complete
 - [x] Use context api to provide state
-- add tasks to the db
-- edit tasks in the db
-- delete tasks from the database
+- [x] API Get Tasks
+- [x] API Post Task
+- [x] API Delete Task
+- [ ] API Edit Task
 
 - [ ] Login
       https://javascript.plainenglish.io/authentication-patterns-with-nextauth-and-mongodb-in-next-js-13-2c1fa98d6b5e

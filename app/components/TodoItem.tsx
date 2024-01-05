@@ -28,7 +28,10 @@ export default function TodoItem({ task }: Props) {
 	function editTask(e: React.ChangeEvent, id: string) {
 		const target = e.target as HTMLInputElement;
 		const value = target.value;
-
+		const response = fetch(`/api/editTask/${id}`, {
+			method: "PUT",
+			body: JSON.stringify({ name: value }),
+		}).then((response) => response.json());
 		setToDo((previous) =>
 			previous.map((task) =>
 				task.id === id
