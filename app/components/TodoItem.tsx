@@ -44,7 +44,11 @@ export default function TodoItem({ task }: Props) {
 	}
 
 	function deleteTask(id: string) {
-		setToDo((previous) => previous.filter((task) => task.id !== id));
+		const response = fetch(`/api/deleteTask/${id}`, { method: "DELETE" })
+			.then((response) => response.json())
+			.then((response) =>
+				setToDo((previous) => previous.filter((task) => task.id !== response.id))
+			);
 	}
 
 	return (

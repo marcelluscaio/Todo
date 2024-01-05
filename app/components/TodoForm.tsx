@@ -1,7 +1,6 @@
 import { FormEvent, useContext } from "react";
 import { Context } from "./ContextProvider";
 import { extractValidContext } from "../utils/extractValidContext";
-/* import { createTask } from "../api/createTask/route"; */
 
 export default function TodoForm() {
 	const { setToDo } = extractValidContext(useContext(Context));
@@ -40,8 +39,8 @@ export default function TodoForm() {
 				}),
 			});
 
-			const data = await response.json();
-			setToDo((previous) => [...previous, data]);
+			const task = await response.json();
+			setToDo((previous) => [...previous, task]);
 		} catch (error) {
 			console.log("Error: ", error);
 		}
