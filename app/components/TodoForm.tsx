@@ -26,10 +26,24 @@ export default function TodoForm() {
 		return input;
 	}
 
-	function createToDo(input: HTMLInputElement) {
+	async function createToDo(input: HTMLInputElement) {
 		const value = input.value;
-		const id = crypto.randomUUID();
-		setToDo((previous) => [...previous, { id: id, name: value, complete: false }]);
+
+		try {
+			const response = await fetch("/api/createTask", {
+				method: "POST",
+				body: JSON.stringify({
+					name: value,
+					completed: false,
+					userId: "Random ID",
+				}),
+			});
+
+			const task = await response.json();
+			setToDo((previous) => [...previous, task]);
+		} catch (error) {
+			console.log("Error: ", error);
+		}
 	}
 
 	function resetInput(input: HTMLInputElement) {

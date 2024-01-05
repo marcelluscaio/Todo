@@ -1,5 +1,6 @@
 export type ToDoItem = {
 	id: string;
 	name: string;
-	complete: boolean;
+	completed: boolean;
+	userId: string;
 };
