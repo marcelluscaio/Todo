@@ -7,6 +7,8 @@
 - add tasks to the db
 - edit tasks in the db
 - delete tasks from the database
+- Problema: cache das tarefas. Adiciono, mas nao recarregar. Preciso fazer o fetch com cache no-store
+
 - [ ] Login
       https://javascript.plainenglish.io/authentication-patterns-with-nextauth-and-mongodb-in-next-js-13-2c1fa98d6b5e
 
