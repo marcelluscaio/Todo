@@ -7,7 +7,9 @@
 - [x] API Get Tasks
 - [x] API Post Task
 - [x] API Delete Task
-- [ ] API Edit Task
+- [x] API Edit Task
+- [ ] Style form
+- [ ] Style tasks
 
 - [ ] Login
       https://javascript.plainenglish.io/authentication-patterns-with-nextauth-and-mongodb-in-next-js-13-2c1fa98d6b5e
@@ -18,7 +20,5 @@
   https://next-auth.js.org/configuration/initialization#route-handlers-app
   https://next-auth.js.org/getting-started/example
 
-- [ ] database
+- [x] database
 - [ ] Readme
-- [ ] Style form
-- [ ] Style tasks
