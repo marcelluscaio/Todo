@@ -20,8 +20,6 @@ export default function ContextProvider() {
 	}
 
 	useEffect(() => {
-		console.log("useEffect");
-
 		getTasks();
 	}, []);
 
