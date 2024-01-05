@@ -2,6 +2,7 @@
 
 import { useState, createContext, useEffect } from "react";
 import type { ToDoItem } from "../types/ToDoItem";
+//@ts-ignore
 import { Tasks } from "@prisma/client"; //apagar o tipo todoItem???
 import type { ContextType } from "../types/ContextType";
 import TodoForm from "./TodoForm";
@@ -19,6 +20,8 @@ export default function ContextProvider() {
 	}
 
 	useEffect(() => {
+		console.log("useEffect");
+
 		getTasks();
 	}, []);
 
