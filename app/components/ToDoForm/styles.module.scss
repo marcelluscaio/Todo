@@ -1,0 +1,23 @@
+.form {
+	display: flex;
+	justify-content: center;
+
+	input {
+		appearance: none;
+
+		padding: 0.5em 4em 0.5em 1em;
+		background: none;
+		background-color: #ffffff;
+		color: gray;
+		border: none;
+		border-radius: 100vmax;
+	}
+
+	button {
+		background-color: gray;
+		color: #ffffff;
+		padding: 0.5em 1em;
+		border-radius: 100vmax;
+		transform: translateX(-100%);
+	}
+}

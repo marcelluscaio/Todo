@@ -5,7 +5,7 @@ import type { ToDoItem } from "../types/ToDoItem";
 //@ts-ignore
 import { Tasks } from "@prisma/client"; //apagar o tipo todoItem???
 import type { ContextType } from "../types/ContextType";
-import TodoForm from "./TodoForm";
+import TodoForm from "./ToDoForm/TodoForm";
 import TodoList from "./TodoList";
 
 export const Context = createContext<ContextType | null>(null);

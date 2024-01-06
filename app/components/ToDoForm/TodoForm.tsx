@@ -1,6 +1,7 @@
 import { FormEvent, useContext } from "react";
-import { Context } from "./ContextProvider";
-import { extractValidContext } from "../utils/extractValidContext";
+import { Context } from "../ContextProvider";
+import { extractValidContext } from "../../utils/extractValidContext";
+import styles from "./styles.module.scss";
 
 export default function TodoForm() {
 	const { setToDo } = extractValidContext(useContext(Context));
@@ -51,8 +52,14 @@ export default function TodoForm() {
 	}
 
 	return (
-		<form onSubmit={(e) => handleButton(e)}>
-			<input name="todo" />
+		<form
+			className={styles.form}
+			onSubmit={(e) => handleButton(e)}
+		>
+			<input
+				autoComplete="off"
+				name="todo"
+			/>
 			<button type="submit">Create</button>
 		</form>
 	);
