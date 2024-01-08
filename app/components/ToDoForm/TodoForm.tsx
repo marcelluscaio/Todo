@@ -56,11 +56,13 @@ export default function TodoForm() {
 			className={styles.form}
 			onSubmit={(e) => handleButton(e)}
 		>
-			<input
-				autoComplete="off"
-				name="todo"
-			/>
-			<button type="submit">Create</button>
+			<div>
+				<input
+					autoComplete="off"
+					name="todo"
+				/>
+				<button type="submit">Create</button>
+			</div>
 		</form>
 	);
 }
