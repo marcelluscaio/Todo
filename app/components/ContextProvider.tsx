@@ -8,6 +8,7 @@ import type { ContextType } from "../types/ContextType";
 import TodoForm from "./ToDoForm/TodoForm";
 import TodoList from "./ToDoList/TodoList";
 import Header from "./Header/Header";
+import Container from "./Container/Container";
 
 export const Context = createContext<ContextType | null>(null);
 
@@ -28,9 +29,11 @@ export default function ContextProvider() {
 
 	return (
 		<Context.Provider value={{ toDo, setToDo }}>
-			<Header />
-			<TodoForm />
-			<TodoList />
+			<Container>
+				<Header />
+				<TodoForm />
+				<TodoList />
+			</Container>
 		</Context.Provider>
 	);
 }
