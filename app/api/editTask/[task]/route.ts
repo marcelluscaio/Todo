@@ -4,7 +4,7 @@ export async function PUT(
 	request: Request,
 	{ params }: { params: { task: string } }
 ) {
-	const { name } = await request.json();
+	const { name, completed } = await request.json();
 	const { task } = params;
 
 	const result = await prisma.tasks.update({
@@ -13,6 +13,7 @@ export async function PUT(
 		},
 		data: {
 			name,
+			completed,
 		},
 	});
 

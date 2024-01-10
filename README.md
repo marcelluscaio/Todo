@@ -8,13 +8,12 @@
 - [x] API Post Task
 - [x] API Delete Task
 - [x] API Edit Task
-- [ ] melhorar o tipo em ToDoItem (isEditingItem) (ver kyle https://www.typescriptlang.org/docs/handbook/2/typeof-types.html)
-- [ ] Ver se consigo juntar as rotas das apis
-- [ ] Style form
-- [ ] Style tasks
+- [x] Style form
+- [x] Style tasks
 - [ ] Readme
 
 - V2
+- [ ] Ver se consigo juntar as rotas das apis
 - [ ] Quando abrir, ha uma versao sem conexao com banco de dados. Apos login, ha a versao com banco de dados
 - [ ] Login
       https://javascript.plainenglish.io/authentication-patterns-with-nextauth-and-mongodb-in-next-js-13-2c1fa98d6b5e

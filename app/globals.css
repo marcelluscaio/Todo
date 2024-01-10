@@ -186,12 +186,14 @@ ul {
 	border: none;
 
 	background: none;
-	pointer-events: none;
+	/* pointer-events: none; */
 	outline: none;
 }
 
 .task-input.editing {
 	background: initial;
 	pointer-events: all;
-	outline: 1px solid #ffffff;
+
+	background: #666666;
+	/* outline: 1px solid #ffffff; */
 }

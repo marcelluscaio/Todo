@@ -20,6 +20,7 @@ export default function TodoList() {
 					key={task.id}
 				/>
 			))}
+			{toDo.length < 1 && <p>Use form to add tasks to your list</p>}
 		</ul>
 	);
 }

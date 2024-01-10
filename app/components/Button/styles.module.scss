@@ -5,4 +5,8 @@
 	background-color: gray;
 
 	color: #ffffff;
+
+	&:disabled {
+		opacity: 0.5;
+	}
 }
