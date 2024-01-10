@@ -6,6 +6,9 @@
 		border-radius: 100vmax;
 		position: relative;
 
+		width: 100%;
+		max-width: 50ch;
+
 		&:focus-within {
 			outline: 2px solid #ffffff;
 			outline-offset: 4px;
@@ -13,17 +16,18 @@
 	}
 
 	input {
+		width: 100%;
+		padding: 0.5em 7em 0.5em 1em;
+		border-radius: 100vmax;
+
+		background: none;
+		background-color: #ffffff;
+
+		color: gray;
+
 		appearance: none;
 		border: none;
 		outline: none;
-
-		width: 90vw;
-		max-width: 50ch;
-		padding: 0.5em 4em 0.5em 1em;
-		background: none;
-		background-color: #ffffff;
-		color: gray;
-		border-radius: 100vmax;
 	}
 
 	button {
