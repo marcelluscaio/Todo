@@ -1,6 +1,7 @@
 import { FormEvent, useContext } from "react";
 import { Context } from "../ContextProvider";
 import { extractValidContext } from "../../utils/extractValidContext";
+import Button from "../Button/Button";
 import styles from "./styles.module.scss";
 
 export default function TodoForm() {
@@ -61,7 +62,10 @@ export default function TodoForm() {
 					autoComplete="off"
 					name="todo"
 				/>
-				<button type="submit">Create</button>
+				<Button
+					type="submit"
+					text="Create"
+				/>
 			</div>
 		</form>
 	);

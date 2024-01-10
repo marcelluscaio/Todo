@@ -6,7 +6,8 @@ import type { ToDoItem } from "../types/ToDoItem";
 import { Tasks } from "@prisma/client"; //apagar o tipo todoItem???
 import type { ContextType } from "../types/ContextType";
 import TodoForm from "./ToDoForm/TodoForm";
-import TodoList from "./TodoList";
+import TodoList from "./ToDoList/TodoList";
+import Header from "./Header/Header";
 
 export const Context = createContext<ContextType | null>(null);
 
@@ -27,7 +28,7 @@ export default function ContextProvider() {
 
 	return (
 		<Context.Provider value={{ toDo, setToDo }}>
-			<header>To do App</header>
+			<Header />
 			<TodoForm />
 			<TodoList />
 		</Context.Provider>
