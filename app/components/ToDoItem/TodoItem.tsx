@@ -3,6 +3,7 @@ import { extractValidContext } from "../../utils/extractValidContext";
 import { Context } from "../ContextProvider";
 import type { ToDoItem } from "../../types/ToDoItem";
 import styles from "./styles.module.scss";
+import Button from "../Button/Button";
 
 type IsEditingItemId = string | null;
 
@@ -75,34 +76,63 @@ export default function TodoItem({
 			className={styles.item}
 			key={task.id}
 		>
-			<input
-				type="checkbox"
-				checked={task.completed}
-				onChange={() => {
-					toggleTaskStatus(task.id);
-				}}
-			/>
-			<input
-				value={task.name}
-				ref={ref}
-				className={`task-input ${isEditingItemId === task.id ? "editing" : ""}`}
-				tabIndex={isEditingItemId === task.id ? 0 : -1}
-				readOnly={isEditingItemId === task.id ? false : true}
-				onChange={(e) =>
-					setToDo((previous) =>
-						previous.map((tasksItem) =>
-							tasksItem.id === task.id
-								? {
-										id: tasksItem.id,
-										name: e.target.value,
-										userId: tasksItem.userId,
-										completed: tasksItem.completed,
-								  }
-								: tasksItem
+			<div className={styles["input-container"]}>
+				<input
+					type="checkbox"
+					checked={task.completed}
+					aria-label="Mark task as complete"
+					onChange={() => {
+						toggleTaskStatus(task.id);
+					}}
+				/>
+				<input
+					value={task.name}
+					type="text"
+					ref={ref}
+					className={`task-input ${isEditingItemId === task.id ? "editing" : ""}`}
+					tabIndex={isEditingItemId === task.id ? 0 : -1}
+					readOnly={isEditingItemId === task.id ? false : true}
+					onChange={(e) =>
+						setToDo((previous) =>
+							previous.map((tasksItem) =>
+								tasksItem.id === task.id
+									? {
+											id: tasksItem.id,
+											name: e.target.value,
+											userId: tasksItem.userId,
+											completed: tasksItem.completed,
+									  }
+									: tasksItem
+							)
 						)
-					)
-				}
-			/>
+					}
+				/>
+			</div>
+			<div className={styles["buttons-container"]}>
+				<Button
+					text={
+						isEditingItemId !== task.id || isEditingItemId === null
+							? "Edit"
+							: "Confirm"
+					}
+					disabled={
+						isEditingItemId === task.id || isEditingItemId === null ? false : true
+					}
+					onClick={() => {
+						isEditingItemId !== task.id || isEditingItemId === null
+							? startEditingTask(task.id)
+							: editTask(ref.current!, task.id);
+					}}
+				/>
+				<Button
+					text="Delete"
+					disabled={
+						isEditingItemId === task.id || isEditingItemId === null ? false : true
+					}
+					onClick={() => deleteTask(task.id)}
+				/>
+			</div>
+			{/* 
 			<button
 				disabled={
 					isEditingItemId === task.id || isEditingItemId === null ? false : true
@@ -124,7 +154,7 @@ export default function TodoItem({
 				onClick={() => deleteTask(task.id)}
 			>
 				Delete
-			</button>
+			</button> */}
 		</li>
 	);
 }

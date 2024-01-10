@@ -1,20 +1,31 @@
 .item {
 	display: flex;
+	justify-content: space-between;
 	align-items: center;
+	flex-wrap: wrap;
+	width: 100%;
 
 	& + .item {
 		margin-top: 0.5rem;
+		border-top: 1px solid #ffffff;
+		padding-top: 0.5rem;
+	}
+
+	.input-container {
+		display: flex;
+		align-items: center;
 	}
 
 	input[type="checkbox"] {
 		display: grid;
 		place-content: center;
 
-		width: 1em;
-		height: 1em;
+		width: 1.5em;
+		height: 1.5em;
 		border: 0.125em solid currentColor;
 		border-radius: 0.125em;
 		margin: 0;
+		margin-right: 0.5rem;
 
 		background-color: #ffffff;
 
@@ -26,8 +37,9 @@
 
 	input[type="checkbox"]::before {
 		content: "";
-		width: 0.75em;
-		height: 0.75em;
+
+		width: 1em;
+		height: 1em;
 
 		box-shadow: inset 1em 1em gray;
 
@@ -37,5 +49,40 @@
 
 	input[type="checkbox"]:checked::before {
 		transform: scale(1);
+	}
+
+	input[type="text"] {
+		width: 100%;
+	}
+
+	.buttons-container {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 0.5rem;
+
+		& * {
+			flex-shrink: 0;
+			flex-basis: 100%;
+		}
+	}
+}
+
+@media (max-width: 40em) {
+	.item {
+		flex-direction: column;
+
+		.input-container {
+			flex-direction: column-reverse;
+
+			margin-bottom: 0.5rem;
+		}
+
+		input[type="checkbox"] {
+			margin-right: 0;
+		}
+
+		input[type="text"] {
+			text-align: center;
+		}
 	}
 }
