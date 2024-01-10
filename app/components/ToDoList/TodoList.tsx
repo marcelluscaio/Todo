@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { extractValidContext } from "../../utils/extractValidContext";
 import { Context } from "../ContextProvider";
-import TodoItem from "../TodoItem";
+import TodoItem from "../ToDoItem/TodoItem";
 import styles from "./styles.module.scss";
 
 export default function TodoList() {

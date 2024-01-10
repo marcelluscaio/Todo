@@ -1,7 +1,8 @@
 import { SetStateAction, useContext, useRef, Dispatch } from "react";
-import { extractValidContext } from "../utils/extractValidContext";
-import { Context } from "./ContextProvider";
-import type { ToDoItem } from "../types/ToDoItem";
+import { extractValidContext } from "../../utils/extractValidContext";
+import { Context } from "../ContextProvider";
+import type { ToDoItem } from "../../types/ToDoItem";
+import styles from "./styles.module.scss";
 
 type IsEditingItemId = string | null;
 
@@ -70,7 +71,10 @@ export default function TodoItem({
 	}
 
 	return (
-		<li key={task.id}>
+		<li
+			className={styles.item}
+			key={task.id}
+		>
 			<input
 				type="checkbox"
 				checked={task.completed}
