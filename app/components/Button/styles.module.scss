@@ -1,0 +1,12 @@
+.button {
+	padding: 0.5em 1em;
+	border-radius: 100vmax;
+
+	background-color: gray;
+
+	color: #ffffff;
+
+	&:disabled {
+		opacity: 0.5;
+	}
+}
