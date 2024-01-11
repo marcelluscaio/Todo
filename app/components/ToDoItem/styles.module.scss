@@ -35,6 +35,11 @@
 		appearance: none;
 	}
 
+	input[type="checkbox"]:focus-visible {
+		outline: 2px solid var(--text);
+		outline-offset: 4px;
+	}
+
 	input[type="checkbox"]::after {
 		content: "";
 
@@ -87,6 +92,9 @@
 
 	input[type="text"] {
 		width: 100%;
+
+		border-radius: 1rem;
+
 		color: var(--text);
 		font-size: var(--fs-2);
 		font-weight: 300;
@@ -100,6 +108,11 @@
 		& * {
 			flex-shrink: 0;
 			flex-basis: 100%;
+
+			&:focus-visible {
+				outline: 2px solid var(--text);
+				outline-offset: 4px;
+			}
 		}
 	}
 }

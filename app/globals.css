@@ -88,11 +88,12 @@ ul {
 	outline: none;
 }
 
-.task-input.editing {
+.task-input.editing.editing {
 	background: initial;
 	pointer-events: all;
 
-	background: #666666;
+	background: var(--secondary);
+	color: var(--primary);
 }
 
 :root {
@@ -111,9 +112,3 @@ body {
 	min-height: 100svh;
 	color: var(--text);
 }
-
-/* @media (prefers-color-scheme: dark) {
-	html {
-		color-scheme: dark;
-	}
-} */
