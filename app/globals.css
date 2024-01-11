@@ -95,8 +95,22 @@ ul {
 	background: #666666;
 }
 
-@media (prefers-color-scheme: dark) {
+:root {
+	--primary: #070054;
+	--secondary: #bdb8fa;
+	--text: #dddbf1;
+}
+
+body {
+	background: linear-gradient(var(--primary) -10%, var(--secondary) 250%);
+	min-height: 100vh;
+	color: var(--text);
+
+	/* font-family: Inter; */
+}
+
+/* @media (prefers-color-scheme: dark) {
 	html {
 		color-scheme: dark;
 	}
-}
+} */
