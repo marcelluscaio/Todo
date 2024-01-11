@@ -102,11 +102,7 @@ ul {
 }
 
 body {
-	background: radial-gradient(
-		circle at -50% -100%,
-		var(--primary) 75%,
-		var(--secondary) 175%
-	);
+	background: radial-gradient(closest-side, var(--primary) 0, var(--secondary) 900%);
 	min-height: 100vh;
 	min-height: 100svh;
 	color: var(--text);
