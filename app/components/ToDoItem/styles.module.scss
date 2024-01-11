@@ -87,6 +87,9 @@
 
 	input[type="text"] {
 		width: 100%;
+		color: var(--text);
+		font-size: var(--fs-2);
+		font-weight: 300;
 	}
 
 	.buttons-container {
