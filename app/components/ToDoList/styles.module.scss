@@ -1,11 +1,19 @@
 .list {
 	padding: 1.5rem;
-	border: 1px solid #ffffff;
+	margin-bottom: 2rem;
+	border: 2px solid #ffffff;
 	border-radius: 1rem;
 
 	h2 {
 		margin-bottom: 0.5em;
 
-		font-size: 1.25rem;
+		font-size: var(--fs-2);
+		font-weight: 600;
+		text-transform: uppercase;
+	}
+
+	p {
+		font-size: 1.125rem;
+		font-weight: 300;
 	}
 }
