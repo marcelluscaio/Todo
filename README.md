@@ -37,6 +37,8 @@ By using Next.js, I took advantage of built-in support for CSS modules and Sass,
 ## <a id="added">Highlights</a>
 
 - Main features to pay attention to
+  - Use of grid on header and form to add task
+  - use of key frame animation on button
   - Responsiveness (tested on...)
   - Accessibility (tested with screen readers, keyboard navigation, zoom, default font-size of..., contrast checkers, )
   - Full CRUD using Next.js's API endpoints (User can create a task, they can delete it, and update it - either the name, or the completedness of the task). For a better user experience, I created a mechanism that disables buttons, when editing, or when the task is compelte.

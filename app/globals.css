@@ -102,11 +102,14 @@ ul {
 }
 
 body {
-	background: linear-gradient(var(--primary) -10%, var(--secondary) 250%);
+	background: radial-gradient(
+		circle at -50% -100%,
+		var(--primary) 75%,
+		var(--secondary) 175%
+	);
 	min-height: 100vh;
+	min-height: 100svh;
 	color: var(--text);
-
-	/* font-family: Inter; */
 }
 
 /* @media (prefers-color-scheme: dark) {

@@ -5,7 +5,10 @@ export default function Header() {
 	return (
 		<header className={styles.header}>
 			<h1>To do App</h1>
-			<Button text="Log In" />
+			<Button
+				text="Log In"
+				disabled
+			/>
 		</header>
 	);
 }
