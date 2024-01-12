@@ -139,7 +139,6 @@ export default function TodoItem({
 						isEditingItemId !== task.id || isEditingItemId === null
 							? startEditingTask(task.id)
 							: editTask(ref.current!, task.id);
-						console.log(task.completed);
 					}}
 				/>
 				<Button
