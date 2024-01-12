@@ -10,17 +10,23 @@ export default function TodoList() {
 	const [isEditingItemId, setIsEditingItemId] = useState<string | null>(null);
 
 	return (
-		<ul className={styles.list}>
+		<section className={styles.list}>
 			<h2>Tasks</h2>
-			{toDo.map((task) => (
-				<TodoItem
-					task={task}
-					isEditingItemId={isEditingItemId}
-					setIsEditingItemId={setIsEditingItemId}
-					key={task.id}
-				/>
-			))}
-			{toDo.length < 1 && <p>Use the form to add tasks to your list.</p>}
-		</ul>
+			<ul>
+				{toDo.map((task) => (
+					<TodoItem
+						task={task}
+						isEditingItemId={isEditingItemId}
+						setIsEditingItemId={setIsEditingItemId}
+						key={task.id}
+					/>
+				))}
+				{toDo.length < 1 && (
+					<li>
+						<p>Use the form to add tasks to your list.</p>
+					</li>
+				)}
+			</ul>
+		</section>
 	);
 }

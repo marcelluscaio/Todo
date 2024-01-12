@@ -83,7 +83,8 @@ export default function TodoItem({
 				<input
 					type="checkbox"
 					checked={task.completed}
-					aria-label="Mark task as complete"
+					aria-label={`Mark task ${task.name} as complete`}
+					disabled={isEditingItemId === null ? false : true}
 					onChange={() => {
 						toggleTaskStatus(task.id, task.completed);
 					}}
@@ -96,7 +97,9 @@ export default function TodoItem({
 					tabIndex={isEditingItemId === task.id ? 0 : -1}
 					readOnly={isEditingItemId === task.id ? false : true}
 					onClick={() => {
-						isEditingItemId === null ? startEditingTask(task.id) : undefined;
+						isEditingItemId === null && !task.completed
+							? startEditingTask(task.id)
+							: undefined;
 					}}
 					onKeyDown={(e) => {
 						if (e.key === "Enter") {

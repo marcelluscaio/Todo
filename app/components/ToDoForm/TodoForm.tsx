@@ -61,6 +61,7 @@ export default function TodoForm() {
 				<input
 					autoComplete="off"
 					name="todo"
+					aria-label="Add task to list"
 				/>
 				<Button
 					type="submit"
