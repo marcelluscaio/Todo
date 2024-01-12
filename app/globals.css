@@ -80,22 +80,6 @@ ul {
 	list-style: none;
 }
 
-.task-input {
-	padding: 0.75em 0.5em;
-	border: none;
-
-	background: none;
-	outline: none;
-}
-
-.task-input.editing.editing {
-	background: initial;
-	pointer-events: all;
-
-	background: var(--secondary);
-	color: var(--primary);
-}
-
 :root {
 	--primary: #070054;
 	--secondary: #bdb8fa;

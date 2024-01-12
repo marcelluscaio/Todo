@@ -92,7 +92,7 @@ export default function TodoItem({
 					value={task.name}
 					type="text"
 					ref={ref}
-					className={`task-input ${isEditingItemId === task.id ? "editing" : ""}`}
+					className={`${isEditingItemId === task.id ? styles.editing : ""}`}
 					tabIndex={isEditingItemId === task.id ? 0 : -1}
 					readOnly={isEditingItemId === task.id ? false : true}
 					onClick={() => {
