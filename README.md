@@ -183,7 +183,7 @@ button {
 
 ### Enabling and disabling elements
 
-To improve the usex experience I created actions to enable and disable fields according to user interaction.
+To improve user experience I created actions to enable and disable fields according to user interaction.
 
 The task is edited when the user clicks on the task, or on the button edit. When that happens, the element is highlighted, showing it is apt for being edited, while all other buttons and checkboxes are disabled, making sure the user will not perform another action while editing a task.
 
@@ -291,4 +291,4 @@ Found a bug? Want to propose an improvement? Feel free to open a PR or issue.
 
 ### Future
 
-- [ ] Login (When the app opens, there will be one version without connection to the database, just a trail. After login, user's task are connected to DB)
+- [ ] Login (When the app opens, there will be one version without connection to the database, just a trial. After login, user's task are connected to DB)
